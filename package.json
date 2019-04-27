@@ -1,0 +1,19 @@
+{
+  "name": "webscraper.jeanrauwers.com",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "node -r esm src/index.js"
+  },
+  "author": "Jean Rauwers",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "esm": "^3.2.22"
+  },
+  "devDependencies": {
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  }
+}

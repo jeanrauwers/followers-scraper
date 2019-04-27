@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "node -r esm src/index.js"
+    "dev": "node -r esm backend/index.js"
   },
   "author": "Jean Rauwers",
   "license": "ISC",

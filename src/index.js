@@ -1,9 +1,11 @@
-import { getHTML, getTwitterFollowers } from './scraper';
+import { getInstagramCount, getTwitterCount } from './scraper';
 
-async function go() {
-	const twitterHtml = await getHTML('https://twitter.com/jeanrauwers');
-	const twitterFollowers = await getTwitterFollowers(twitterHtml);
-	console.log(twitterFollowers);
+async function scraperController() {
+	const [iCount, tCount] = await Promise.all([
+		getInstagramCount(),
+		getTwitterCount()
+	]);
+	console.log(iCount, tCount);
 }
 
-go();
+scraperController();

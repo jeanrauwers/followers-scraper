@@ -3,4 +3,8 @@ Scraping my total followers from Twitteer and Instagram and It will save on mong
 
 ## Installing
 
-### For install please run $npm install 
+### $npm install 
+
+## Running 
+
+### $npm run dev

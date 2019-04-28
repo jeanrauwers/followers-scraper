@@ -3,17 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "node -r esm backend/index.js"
+    "dev": "nodemon -r esm ./backend/index.js --ignore db.json"
   },
   "author": "Jean Rauwers",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "cheerio": "^1.0.0-rc.3",
-    "esm": "^3.2.22"
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "cors": "^2.8.5",
+    "esm": "^3.2.17",
+    "express": "^4.16.4",
+    "lowdb": "^1.0.0",
+    "next": "^8.0.4-canary.11",
+    "node-cron": "^2.0.3",
+    "waait": "^1.0.4"
   },
   "devDependencies": {
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1"
+    "nodemon": "^1.18.10"
   }
 }

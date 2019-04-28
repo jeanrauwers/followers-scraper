@@ -1,6 +1,7 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
 import accountConfig from './account-configurations';
+import db from './db';
 
 export async function getHTML(url) {
 	const { data: html } = await axios.get(url);
@@ -31,4 +32,24 @@ export async function getTwitterCount() {
 	const html = await getHTML(accountConfig.twitterUrl);
 	const twitterCount = await getTwitterFollowers(html);
 	return twitterCount;
+}
+
+export async function taskRunner() {
+	const [iCount, tCount] = await Promise.all([
+		getInstagramCount(),
+		getTwitterCount()
+	]);
+	db.get('twitter')
+		.push({
+			date: Date.now(),
+			count: tCount
+		})
+		.write();
+	db.get('instagram')
+		.push({
+			date: Date.now(),
+			count: iCount
+		})
+		.write();
+	console.log('Done!');
 }
